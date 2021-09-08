@@ -12,6 +12,10 @@ const Navbar = () => {
         history.push("/")
     }
 
+    const gotoAddToCart = () => {
+        history.push("/add-to-cart")
+    }
+
     return (
         <div className='container-fluid main-nav-div'>
             <nav className='main-nav'>
@@ -20,7 +24,7 @@ const Navbar = () => {
                 <button onClick={gotoProductPage} className="nav-btn nav-btn-hover">Products</button>
                 </span>
                 <span className="btn-span">
-                <button className="nav-btn nav-btn-hover">Cart</button>
+                <button onClick={gotoAddToCart} className="nav-btn nav-btn-hover">Cart</button>
                 </span>
             </nav>
         </div>

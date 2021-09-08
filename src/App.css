@@ -5,7 +5,7 @@
 }
 
 .main-nav-div {
-  background-color: #2b2e32;
+  background-color: #393e43;
   width: 100%;
 }
 
@@ -18,8 +18,8 @@
 .nav-btn {
   border-style: none;
   padding: 15px 15px;
-  background-color: #2b2e32;
-  color: rgba(255, 255, 255, 0.699);
+  background-color: #393e43;
+  color: #c8c8c8;
   border-right-style: solid;
   border-right: 1px solid black;
   
@@ -117,4 +117,20 @@
   border-radius: 3px;
   font-size: 15px;
   box-shadow: 0 0 2px #5bc0de;
+}
+
+.add-to-cart-main-div {
+  background-color: #272b30;
+  color: white;
+  height: 100vh;
+}
+
+.add-to-cart-sub-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.main-th {
+  font-size: 25px;
 }

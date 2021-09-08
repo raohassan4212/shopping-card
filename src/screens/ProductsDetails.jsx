@@ -1,14 +1,17 @@
 import Navbar from "../components/Navbar";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 const ProductDetails = (prop) => {
-    
 
-    const {id} = useParams();
-    console.log(`id ${id} `);
+    const { id } = useParams();
 
-    const {title,price,description,varients} = prop.location.state;
-    console.log(title,price,description,varients[1].items[0].title,);
+    const { title, price, description, varients } = prop.location.state;
+
+    const history = useHistory();
+
+    const gotoAddToCart = () => {
+        history.push("/add-to-cart")
+    }
 
 
     return (
@@ -26,21 +29,24 @@ const ProductDetails = (prop) => {
 
                         <p className="font-size-product-detail">US $ {price}</p>
 
-                        <div>
-                            <p className="font-size-product-detail">{varients[0].title}</p>
-                            <button className="product-detail-btn-sub">{varients[0].items[0].title}</button>
-                            <button className="product-detail-btn-sub">{varients[0].items[1].title}</button>
-                        </div>
 
-                        <div>
-                            <p className="font-size-product-detail">{varients[1].title}</p>
-                            <button className="product-detail-btn-sub">{varients[1].items[0].title}</button>
-                            <button className="product-detail-btn-sub">{varients[1].items[1].title}</button>
-                            <button className="product-detail-btn-sub">{varients[1].items[2].title}</button>
-                            <button className="product-detail-btn-sub">{varients[1].items[3].title}</button>
-                        </div>
+                        {
+                            varients.map((varient, i) => {
+                                return (
+                                    <div key={i}>
+                                        <p className="font-size-product-detail">{varient.title}</p>
+                                        {varient.items.map((item, j) => {
+                                            return (
+                                                <button key={j} className="product-detail-btn-sub">{item.title}</button>
+                                            );
+                                        })}
+                                    </div>
+                                );
+                            })
+                        }
 
-                        <button className="product-detail-btn">Add to Cart</button>
+
+                        <button onClick={gotoAddToCart} className="product-detail-btn">Add to Cart</button>
 
                     </div>
                 </div>
