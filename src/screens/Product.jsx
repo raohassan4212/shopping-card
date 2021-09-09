@@ -16,7 +16,7 @@ const Product = () => {
                         {
                             state.productsLists.map((val, ind) => {
                                 return (
-                                    <Cards key={ind} title={val.title} description={val.description} price={val.price} id={val.id} varients={val.varients}/>
+                                    <Cards key={ind} title={val.title} description={val.description} price={val.price} id={val.id} image={val.image}/>
                                 );
                             })
 

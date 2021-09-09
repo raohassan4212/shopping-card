@@ -9,6 +9,10 @@ const AddsItems = () => {
         cartProducts = [];
     }
 
+    let rmCardProduct = () => {
+
+    }
+
     return (
         <>
             <div className="add-to-cart-sub-div" >
@@ -31,11 +35,11 @@ const AddsItems = () => {
                             cartProducts.map((v, i) => {
                                 return (
                                     <tr key={i} className="add-to-cart-tr tr-sub-height">
-                                        <td className="col-margin"><img src="/static/images/iphone.png" width="70px" alt="" /></td>
+                                        <td className="col-margin"><img src={v.image} width="70px" alt="" /></td>
                                         <td className="col-margin">{v.title}</td>
                                         <td className="col-margin">default product</td>
                                         <td className="col-margin">{v.price}</td>
-                                        <td className="col-margin"><button className="add-to-cart-rm-btn">Remove</button></td>
+                                        <td className="col-margin"><button onClick={rmCardProduct} className="add-to-cart-rm-btn">Remove</button></td>
                                     </tr>
                                 );
                             })

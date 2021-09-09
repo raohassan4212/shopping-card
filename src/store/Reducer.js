@@ -3,6 +3,7 @@ const INITIAL_STATE = {
         {
           id: "ABC123",
           title: "Iphone X",
+          image: "/static/images/iphone.png",
           description: "The best smart phone avaliable on earth",
           price: 100,
           varients: [
@@ -45,6 +46,7 @@ const INITIAL_STATE = {
         {
           id: "ABC456",
           title: "Cat Shoes",
+          image: "/static/images/shoes.png",
           description: "The best shoes avaliable on earth",
           price: 150,
           varients: [
@@ -95,6 +97,7 @@ const INITIAL_STATE = {
         {
           id: "ABC789",
           title: "Bags",
+          image: "/static/images/bags.png",
           description: "The best Bags avaliable on earth",
           price: 60,
           varients: [
@@ -137,6 +140,7 @@ const INITIAL_STATE = {
         {
           id: "ABC012",
           title: "T shirts",
+          image: "/static/images/shirts.png",
           description: "The best T shirts avaliable on earth",
           price: 20,
           varients: [
@@ -179,6 +183,7 @@ const INITIAL_STATE = {
         {
           id: "ABC023",
           title: "T shirts",
+          image: "/static/images/shirts.png",
           description: "The best T shirts avaliable on earth",
           price: 45,
           varients: [
@@ -221,6 +226,7 @@ const INITIAL_STATE = {
         {
           id: "ABC034",
           title: "Rollex Watch",
+          image: "/static/images/watchs.png",
           description: "The best watch avaliable on earth",
           price: 200,
           varients: [

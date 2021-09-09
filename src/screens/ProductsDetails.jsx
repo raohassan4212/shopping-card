@@ -8,7 +8,7 @@ const ProductDetails = () => {
 
     const { id } = useParams();
 
-    const { title, price, description, varients } = useSelector((state) => state.productsLists.find((product) => product.id == id))
+    const { title, price, description, varients,image } = useSelector((state) => state.productsLists.find((product) => product.id == id))
 
 
     const history = useHistory();
@@ -24,7 +24,8 @@ const ProductDetails = () => {
            let product = {
                id,
                title,
-               price
+               price,
+               image
            };
 
            let prevProducts = localStorage.getItem("cardProducts");
@@ -53,7 +54,7 @@ const ProductDetails = () => {
 
                 <div className="product-detail-sub-main">
                     <div>
-                        <img src="/static/images/iphone.png" alt="" />
+                        <img src={image} alt="" />
                     </div>
                     <div>
                         <p className="font-size-product-detail">{title} - {description}</p>
