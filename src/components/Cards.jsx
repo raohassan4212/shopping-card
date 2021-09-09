@@ -4,14 +4,13 @@ import { useHistory } from "react-router-dom";
 const Cards = ({title,description,price,id,varients}) => {
 
 
-    const data = id.find((id))
+    
 
     const history = useHistory();
 
     const gotoProductDetail = () => {
         history.push({ 
             pathname: `/product-details/${id}`,
-            state: {title,price,description,varients}
            });
         
     }

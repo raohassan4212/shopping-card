@@ -1,14 +1,6 @@
-
-
 const AddsItems = () => {
 
-    
-
-
-    
-
     let cartProducts = localStorage.getItem("cardProducts");
-    
     
     if (cartProducts) {
         cartProducts = JSON.parse(cartProducts)

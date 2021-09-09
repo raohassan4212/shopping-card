@@ -1,13 +1,15 @@
 import Navbar from "../components/Navbar";
 import { useParams, useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 
-const ProductDetails = (prop) => {
+const ProductDetails = () => {
 
     const { id } = useParams();
 
-    const { title, price, description, varients } = prop.location.state;
+    const { title, price, description, varients } = useSelector((state) => state.productsLists.find((product) => product.id == id))
+
 
     const history = useHistory();
 
@@ -17,7 +19,6 @@ const ProductDetails = (prop) => {
         
         history.push({ 
             pathname: `/add-to-cart`,
-            state: {title,price}
            });
 
            let product = {
