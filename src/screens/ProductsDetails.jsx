@@ -1,6 +1,8 @@
 import Navbar from "../components/Navbar";
 import { useParams, useHistory } from "react-router-dom";
 
+
+
 const ProductDetails = (prop) => {
 
     const { id } = useParams();
@@ -9,10 +11,38 @@ const ProductDetails = (prop) => {
 
     const history = useHistory();
 
+    
+
     const gotoAddToCart = () => {
-        history.push("/add-to-cart")
+        
+        history.push({ 
+            pathname: `/add-to-cart`,
+            state: {title,price}
+           });
+
+           let product = {
+               id,
+               title,
+               price
+           };
+
+           let prevProducts = localStorage.getItem("cardProducts");
+           if (prevProducts) {
+               prevProducts = JSON.parse(prevProducts);
+           } else {
+               prevProducts = [];
+           }
+           prevProducts.push(product);
+
+           
+           localStorage.setItem(`cardProducts`,JSON.stringify(prevProducts));
+
+
+
+        
     }
 
+    
 
     return (
         <div className="container-fluid main-product-detail-div">

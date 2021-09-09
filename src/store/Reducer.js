@@ -260,15 +260,17 @@ const INITIAL_STATE = {
             }
           ]
         }
-      ]
+      ],
+
+      addProducts: []  
 }
 
-const Reducer = (state = INITIAL_STATE, action) => {
+const Reducer = (state = INITIAL_STATE,action) => {
     switch (action.type) {
-                case "UPDATEDATA":
+                case "ADDPRODUCT":
                     return {
                         ...state,
-                        username: action.username
+                        addProducts: action.addProducts
         
                     }
                 default:

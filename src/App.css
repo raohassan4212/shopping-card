@@ -92,6 +92,8 @@
   align-items: center;
   margin-top: 30px;
   flex-direction: column;
+  /* justify-content: space-evenly;
+  flex-wrap: wrap; */
   padding-bottom: 25px;
 }
 
@@ -122,7 +124,8 @@
 .add-to-cart-main-div {
   background-color: #272b30;
   color: white;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   min-width: 340px;
 }
 
@@ -193,13 +196,9 @@
 .add-to-cart-total-div {
   margin-top: 40px;
   font-size: 30px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 242px;
+  padding-left: 20px;
 }
 
-.add-to-cart-footer {
- 
-} 
-
-/* .col-footer {
-  margin-top: 30px !important;
-  font-size: 30px;
-} */

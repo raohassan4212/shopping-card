@@ -1,11 +1,13 @@
 import Navbar from "../components/Navbar";
 import AddsItems from "../components/AddsItems";
 
-const AddToCart = () => {
+const AddToCart = (prop) => {
+    const { title, price } = prop.location.state;
+    console.log(prop);
     return (
         <div className="add-to-cart-main-div">
             <Navbar />
-            <AddsItems />
+            <AddsItems title={title} price={price}/>
         </div>
     );
 }
