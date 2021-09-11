@@ -1,6 +1,7 @@
 import { useHistory } from "react-router-dom";
 
 
+
 const Cards = ({title,description,price,id,image}) => {
 
 
@@ -14,6 +15,8 @@ const Cards = ({title,description,price,id,image}) => {
            });
         
     }
+
+    
 
     return (
         <>

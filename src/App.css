@@ -110,6 +110,10 @@
   padding: 5px;
 }
 
+.product-detail-btn-sub:focus {
+  background-color: black !important;
+}
+
 .product-detail-btn {
   border-style: none;
   background-color: #5bc0de;
@@ -200,5 +204,28 @@
   justify-content: flex-end;
   margin-right: 242px;
   padding-left: 20px;
+}
+
+.add-cart-number {
+  position: relative;
+  bottom: 15px;
+  border-style: none;
+  border: 1px solid white ;
+  padding: 1px;
+  border-radius: 50px;
+  border-right-color: white !important;
+}
+
+.home-main-div {
+  background-image: url('https://previews.123rf.com/images/kouzins/kouzins1501/kouzins150100012/35948459-stack-of-shopping-carts-outside-of-a-store.jpg');
+  min-height: 640px;
+  /* background-repeat: no-repeat;
+  background-size: cover; */
+  background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 100vh
+  
 }
 

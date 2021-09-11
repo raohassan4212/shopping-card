@@ -1,7 +1,17 @@
+import { useSelector } from "react-redux";
+import { RMCardProduct } from "../store/action";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { AddProduct } from "../store/action"
+
+
 const AddsItems = () => {
+    const x = 0;
+
+    const dispatch = useDispatch();
 
     let cartProducts = localStorage.getItem("cardProducts");
-    
+
     if (cartProducts) {
         cartProducts = JSON.parse(cartProducts)
     }
@@ -9,9 +19,19 @@ const AddsItems = () => {
         cartProducts = [];
     }
 
-    let rmCardProduct = () => {
+    const state = useSelector(state => state);
 
+    let rmCardProduct = (event, id) => {
+        dispatch(RMCardProduct(id));
     }
+
+    console.log(state.cardProduct.price)
+
+    useEffect(() => {
+        const cartProductsDispatch = localStorage.getItem("cardProducts");
+
+        dispatch(AddProduct(JSON.parse(cartProductsDispatch)));
+    },[])
 
     return (
         <>
@@ -39,7 +59,7 @@ const AddsItems = () => {
                                         <td className="col-margin">{v.title}</td>
                                         <td className="col-margin">default product</td>
                                         <td className="col-margin">{v.price}</td>
-                                        <td className="col-margin"><button onClick={rmCardProduct} className="add-to-cart-rm-btn">Remove</button></td>
+                                        <td className="col-margin"><button onClick={(event) => rmCardProduct(event, v.cardId)} className="add-to-cart-rm-btn">Remove</button></td>
                                     </tr>
                                 );
                             })
@@ -53,7 +73,7 @@ const AddsItems = () => {
 
             </div>
             <div className="add-to-cart-total-div">
-                <p>Total: 250</p>
+                <p>Total: { cartProducts.map(v => v.price).reduce((prev,next) => prev + next,0 )}</p>
             </div>
         </>
     );

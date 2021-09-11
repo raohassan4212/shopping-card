@@ -1,9 +1,18 @@
+
 function AddProduct(product) {
     return (dispatch) => {
-        dispatch({type: "ADDPRODUCT",addProducts: [product]})
+        dispatch({type: "ADDPRODUCT",cardProduct: product})
     }
 }
 
+function RMCardProduct(id) {
+    return (dispatch) => {
+        dispatch({type: "DELETEPRODUCT",payload: id})
+    }
+}
+
+
 export {
-    AddProduct
+    AddProduct,
+    RMCardProduct
 }
