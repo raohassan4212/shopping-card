@@ -6,7 +6,7 @@ import { AddProduct } from "../store/action"
 
 
 const AddsItems = () => {
-    const x = 0;
+
 
     const dispatch = useDispatch();
 

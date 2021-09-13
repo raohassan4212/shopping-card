@@ -4,6 +4,12 @@ const INITIAL_STATE = {
       id: "ABC123",
       title: "Iphone X",
       image: "/static/images/iphone.png",
+      images: [
+        "/static/images/iphone1.jpg",
+        "/static/images/iphone2.jpg",
+        "/static/images/iphone3.jpg",
+        "/static/images/iphone4.jpg"
+      ],
       description: "The best smart phone avaliable on earth",
       price: 100,
       varients: [
@@ -47,6 +53,12 @@ const INITIAL_STATE = {
       id: "ABC456",
       title: "Cat Shoes",
       image: "/static/images/shoes.png",
+      images: [
+        "/static/images/iphone1.jpg",
+        "/static/images/iphone2.jpg",
+        "/static/images/iphone3.jpg",
+        "/static/images/iphone4.jpg"
+      ],
       description: "The best shoes avaliable on earth",
       price: 150,
       varients: [
@@ -98,6 +110,12 @@ const INITIAL_STATE = {
       id: "ABC789",
       title: "Bags",
       image: "/static/images/bags.png",
+      images: [
+        "/static/images/iphone1.jpg",
+        "/static/images/iphone2.jpg",
+        "/static/images/iphone3.jpg",
+        "/static/images/iphone4.jpg"
+      ],
       description: "The best Bags avaliable on earth",
       price: 60,
       varients: [
@@ -141,6 +159,12 @@ const INITIAL_STATE = {
       id: "ABC012",
       title: "T shirts",
       image: "/static/images/shirts.png",
+      images: [
+        "/static/images/iphone1.jpg",
+        "/static/images/iphone2.jpg",
+        "/static/images/iphone3.jpg",
+        "/static/images/iphone4.jpg"
+      ],
       description: "The best T shirts avaliable on earth",
       price: 20,
       varients: [
@@ -184,6 +208,12 @@ const INITIAL_STATE = {
       id: "ABC023",
       title: "T shirts",
       image: "/static/images/shirts.png",
+      images: [
+        "/static/images/iphone1.jpg",
+        "/static/images/iphone2.jpg",
+        "/static/images/iphone3.jpg",
+        "/static/images/iphone4.jpg"
+      ],
       description: "The best T shirts avaliable on earth",
       price: 45,
       varients: [
@@ -227,6 +257,12 @@ const INITIAL_STATE = {
       id: "ABC034",
       title: "Rollex Watch",
       image: "/static/images/watchs.png",
+      images: [
+        "/static/images/iphone1.jpg",
+        "/static/images/iphone2.jpg",
+        "/static/images/iphone3.jpg",
+        "/static/images/iphone4.jpg"
+      ],
       description: "The best watch avaliable on earth",
       price: 200,
       varients: [

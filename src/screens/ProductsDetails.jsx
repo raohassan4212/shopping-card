@@ -4,12 +4,13 @@ import { useSelector } from "react-redux";
 import { AddProduct } from "../store/action";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
+import ImageCarousel from "../components/ImageCarousel";
 
 
 const ProductDetails = () => {
 
     const state = useSelector(state => state);
-
+    const [selectedVariant, setSelectedVaraint] = useState(0);
 
 
 
@@ -18,14 +19,15 @@ const ProductDetails = () => {
 
     const { id } = useParams();
 
-    const { title, price, description, varients, image } = useSelector((state) => state.productsLists.find((product) => product.id === id));
+    const { title, price, description, varients, image, images } = useSelector((state) => state.productsLists.find((product) => product.id === id));
+    console.log(images);
 
     const [priceVariant1, setPriceVariant1] = useState([0, 0]);
-    console.log(priceVariant1);
+
     const history = useHistory();
 
  
-    const sumOfVaraint = priceVariant1.reduce((prev,next) => prev + next, 0)
+    const sumOfVaraint = () => priceVariant1.reduce((prev,next) => prev + next, 0)
 
 
 
@@ -42,7 +44,7 @@ const ProductDetails = () => {
         let product = {
             cardId,
             title,
-            price: price + sumOfVaraint,
+            price: price + sumOfVaraint(),
             image,
         };
 
@@ -81,33 +83,35 @@ const ProductDetails = () => {
 
                 <div className="product-detail-sub-main">
                     <div>
-                        <img src={image} alt="" />
+                        <ImageCarousel images={images} />
                     </div>
-                    <div>
+                    <div className="detail-sub">
                         <p className="font-size-product-detail">{title} - {description}</p>
 
-                        <p className="font-size-product-detail">US $ {priceVariant1 ? price + sumOfVaraint : price}</p>
+                        <p className="font-size-product-detail-price">US $ {priceVariant1 ? price + sumOfVaraint() : price}</p>
 
 
                         {
                             varients.map((varient, i) => {
                                 return (
                                     <div key={i}>
-                                        <p className="font-size-product-detail">{varient.title}</p>
+                                        <p className="font-size-product-detail-varient">{varient.title}</p>
                                         {varient.items.map((item, j) => {
                                             return (
                                                 <button onClick={(event) => {
+                                                    setSelectedVaraint(i)
                                                     setPriceVariant1((arr) => {
                                                         arr[i] = item.price;
                                                         return [...arr];
                                                     })
-                                                }} key={j} className="product-detail-btn-sub">{item.title}</button>
+                                                }} key={j} className={`product-detail-btn-sub${selectedVariant}`}>{item.title}</button>
                                             );
                                         })}
                                     </div>
                                 );
                             })
                         }
+
 
 
                         <button onClick={gotoAddToCart} className="product-detail-btn">Add to Cart</button>
