@@ -27,7 +27,7 @@ const Navbar = () => {
                 <button onClick={gotoProductPage} className="nav-btn nav-btn-hover">Products</button>
                 </span>
                 <span className="btn-span">
-                <button onClick={gotoAddToCart} className="nav-btn nav-btn-hover"><span>Cart</span><span className="add-cart-number">{state.cardProduct.length}</span></button>
+                <button onClick={gotoAddToCart} className="nav-btn nav-btn-hover"><span>Cart</span> <>{state.cardProduct.length > 0 ? <span className="add-cart-number">{state.cardProduct.length}</span> : ""} </></button>
                 </span>
             </nav>
         </div>

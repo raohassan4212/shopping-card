@@ -10,7 +10,6 @@ import ImageCarousel from "../components/ImageCarousel";
 const ProductDetails = () => {
 
     const state = useSelector(state => state);
-    const [selectedVariant, setSelectedVaraint] = useState(0);
 
 
 
@@ -22,7 +21,13 @@ const ProductDetails = () => {
     const { title, price, description, varients, image, images } = useSelector((state) => state.productsLists.find((product) => product.id === id));
     console.log(images);
 
-    const [priceVariant1, setPriceVariant1] = useState([0, 0]);
+    const varientLength = new Array(varients.length);
+
+    const [selectedVariant, setSelectedVaraint] = useState(varientLength);
+
+
+
+    const [priceVariant1, setPriceVariant1] = useState([0, 1]);
 
     const history = useHistory();
 
@@ -98,13 +103,17 @@ const ProductDetails = () => {
                                         <p className="font-size-product-detail-varient">{varient.title}</p>
                                         {varient.items.map((item, j) => {
                                             return (
-                                                <button onClick={(event) => {
-                                                    setSelectedVaraint(i)
+                                                <button onClick={(events) => {
+                                                    setSelectedVaraint((arr) => {
+                                                        arr[i] = j
+                                                        return [...arr]
+                                                    })
                                                     setPriceVariant1((arr) => {
                                                         arr[i] = item.price;
                                                         return [...arr];
                                                     })
-                                                }} key={j} className={`product-detail-btn-sub${selectedVariant}`}>{item.title}</button>
+                                                    return events
+                                                }} key={j} className={selectedVariant[i] == j ? "product-detail-btn-active" : "product-detail-btn-a"}>{item.title}</button>
                                             );
                                         })}
                                     </div>

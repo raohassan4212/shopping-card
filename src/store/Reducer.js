@@ -54,7 +54,7 @@ const INITIAL_STATE = {
       title: "Cat Shoes",
       image: "/static/images/shoes.png",
       images: [
-        "/static/images/iphone1.jpg",
+        "/static/images/shoes.png",
         "/static/images/iphone2.jpg",
         "/static/images/iphone3.jpg",
         "/static/images/iphone4.jpg"
@@ -111,7 +111,7 @@ const INITIAL_STATE = {
       title: "Bags",
       image: "/static/images/bags.png",
       images: [
-        "/static/images/iphone1.jpg",
+        "/static/images/bags.png",
         "/static/images/iphone2.jpg",
         "/static/images/iphone3.jpg",
         "/static/images/iphone4.jpg"
@@ -160,7 +160,7 @@ const INITIAL_STATE = {
       title: "T shirts",
       image: "/static/images/shirts.png",
       images: [
-        "/static/images/iphone1.jpg",
+        "/static/images/shirt.png",
         "/static/images/iphone2.jpg",
         "/static/images/iphone3.jpg",
         "/static/images/iphone4.jpg"
@@ -209,7 +209,7 @@ const INITIAL_STATE = {
       title: "T shirts",
       image: "/static/images/shirts.png",
       images: [
-        "/static/images/iphone1.jpg",
+        "/static/images/shirts.png",
         "/static/images/iphone2.jpg",
         "/static/images/iphone3.jpg",
         "/static/images/iphone4.jpg"
@@ -258,7 +258,7 @@ const INITIAL_STATE = {
       title: "Rollex Watch",
       image: "/static/images/watchs.png",
       images: [
-        "/static/images/iphone1.jpg",
+        "/static/images/watchs.png",
         "/static/images/iphone2.jpg",
         "/static/images/iphone3.jpg",
         "/static/images/iphone4.jpg"
